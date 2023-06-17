@@ -22,10 +22,10 @@ Write a method that finds every ‘strongly connected component’ of pages. A s
 Write a method that finds all the centers of the Wikipedia page graph. A vertex is considered to be the center of a graph if the maximum shortest path from that vertex to any other vertex is the minimum possible.
 
 ## Testing Data
-The code should be tested thoroughly with your own test data. A small sample test graph provided is named "example_graph1". Another own test data made to specially test method getHamiltonianPath is named "example_graph2".
+The code should be tested thoroughly with own test data. A small sample test graph provided is named "example_graph1". Another own test data made to specially test method getHamiltonianPath is named "example_graph2".
 
 ## Grade Contribution
-This project is worth 20% of the final grade. The marking scheme is as follows:
+This project worths 20% of the final grade. The marking scheme is as follows:
 1. The marks for individual questions are, Q1 (3 marks), Q2 (7 marks), Q3 (6 marks), Q4 (4 marks)
 2. The report should contain the pseudo codes or descriptions/source of all the algorithms that are used and also analysis their complexity, some performance studies on different size graphs.
 3. Correct implementations of algorithms will get 70% of the marks, design/use/explain efficient algorithms are marked as well.
