@@ -1,0 +1,25 @@
+// Question 1
+Shortest path distance from /wiki/Flow_network to /wiki/Approximate_max-flow_min-cut_theorem: 2
+
+// Question 2
+Hamiltonian path is tested using file example_graph2:
+A
+B
+C
+D
+E
+F
+
+// Question 3
+Strongly connected components: 3
+1: [/wiki/Nowhere-zero_flow]
+2: [/wiki/Flow_network, /wiki/Approximate_max-flow_min-cut_theorem, /wiki/Ford%E2%80%93Fulkerson_algorithm, 
+/wiki/Dinic%27s_algorithm, /wiki/Edmonds%E2%80%93Karp_algorithm, /wiki/Max-flow_min-cut_theorem, 
+/wiki/Push%E2%80%93relabel_maximum_flow_algorithm, /wiki/Maximum_flow_problem, /wiki/Minimum-cost_flow_problem, 
+/wiki/Out-of-kilter_algorithm, /wiki/Network_simplex_algorithm, /wiki/Circulation_problem, 
+/wiki/Multi-commodity_flow_problem, /wiki/Gomory%E2%80%93Hu_tree, /wiki/Minimum_cut]   
+3: [/wiki/Braess%27_paradox]
+
+// Question 4
+Graph centers: 1
+/wiki/Braess%27_paradox
