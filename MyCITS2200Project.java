@@ -62,7 +62,7 @@
     * @param url a String URL to add
     * 
     */
-   public void addVertex(String url){
+   private void addVertex(String url){
      if (!hasVertex(url)) {
        int id = adjList.size();
        idFromURL.put(url, id); //each new vertex is added to the end of idFromURL which has same size of adjList
@@ -155,11 +155,11 @@
  
      while (!queue.isEmpty()){
        //pop each value from queue
-       int tail = queue.poll();
+       int vertex = queue.poll();
  
-       for (int neighbor : adjList.get(tail)){
+       for (int neighbor : adjList.get(vertex)){
          if (distance[neighbor] == -1){ //if the neighbor hasn't been visited yet
-           distance[neighbor] = distance[tail] + 1; //distance to every new vertex is increased by 1
+           distance[neighbor] = distance[vertex] + 1; //distance to every new vertex is increased by 1
            
            if (neighbor == endVertex){ //stop when reaching endVertex and get distance at that point
              return distance[neighbor];
@@ -296,13 +296,13 @@
      // Process all vertices in order defined by Stack
      while (!stack.isEmpty()) {
        // Pop a vertex from stack
-       int v = (int)stack.pop();
+       int vertex = stack.pop();
  
-       if (!visited[v]) {
+       if (!visited[vertex]) {
          // A new stack to store the strongly connected component
          Stack<Integer> component = new Stack<>();
          // Perform DFS starting from the popped vertex to find the connected component
-         depthFirstSearch(v, visited, component, transposeAdjList);
+         depthFirstSearch(vertex, visited, component, transposeAdjList);
          // Add the component stack to the result list
          // System.out.println(component);
          result.add(component);
@@ -331,18 +331,18 @@
     * this function can be used for both
     * original graph and transpose one
     * 
-    * @param v the current vertex
+    * @param vertex the current vertex
     * @param visited a boolean array to track visited vertices
     * @param stack a stack to hold graph's strongly connected components
     * @param myList the graph that is traversed
     * 
     */
-   private void depthFirstSearch(int v, boolean visited[], Stack<Integer> stack, ArrayList<LinkedList<Integer>> myList){
+   private void depthFirstSearch(int vertex, boolean visited[], Stack<Integer> stack, ArrayList<LinkedList<Integer>> myList){
      // Mark the current node as visited 
-     visited[v] = true;
+     visited[vertex] = true;
  
      // Recursion for all the vertices adjacent to this vertex
-     Iterator<Integer> i = myList.get(v).iterator();
+     Iterator<Integer> i = myList.get(vertex).iterator();
      while (i.hasNext()) {
        int n = i.next();
  
@@ -353,7 +353,7 @@
  
      // All vertices reachable from v are processed by now,
      // push v to Stack
-     stack.push(v);
+     stack.push(vertex);
    }
  
    /*
@@ -416,15 +416,15 @@
    /**
     * helper method to find minimum value of a list
     *
-    * @param list an integer array to find the mininum value
-    * @return that mininum value
+    * @param arr an integer array to find the minimum value
+    * @return that minimum value
     * 
     */
    private int findMinimum(int[] arr){
      int minValue = arr[0];
-     for (int num : arr){
-       if (num < minValue){
-         minValue = num;
+     for (int value : arr){
+       if (value < minValue){
+         minValue = value;
        }
      }
  
