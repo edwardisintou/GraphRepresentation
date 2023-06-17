@@ -1,4 +1,4 @@
-### CITS2200 Data Structures and Algorithms
+# CITS2200 Data Structures and Algorithms
 
 ## Project 1: Graph Representation
 Author 1: Edward Le
