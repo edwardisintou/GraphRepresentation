@@ -1,6 +1,7 @@
 package GraphRepresentation;
 
 import java.io.*;
+import java.util.*;
 
 public class CITS2200ProjectTester {
     public static void loadGraph(MyCITS2200Project project, String path) {
@@ -29,25 +30,29 @@ public class CITS2200ProjectTester {
         // Load the graph into the project.
         loadGraph(proj, pathToGraphFile);
     
-        //Test the getShortestPath method.
+        //Test the getShortestPath method
         String startVertex = "/wiki/Flow_network";
         String endVertex = "/wiki/Approximate_max-flow_min-cut_theorem";
         int shortestPath = proj.getShortestPath(startVertex, endVertex);
         System.out.println("Shortest path from " + startVertex + " to " + endVertex + " is: " + shortestPath);
 
-        // String[][] stronglyConnectedComponents = proj.getStronglyConnectedComponents();
-        // for (String[] component : stronglyConnectedComponents) {
-        //     System.out.println(Arrays.toString(component));
-        // }
+        //Test the get getStronglyConnectedComponents method
+        String[][] stronglyConnectedComponents = proj.getStronglyConnectedComponents();
+        for (String[] component : stronglyConnectedComponents) {
+            System.out.println(Arrays.toString(component));
+        }
 
-        // String[] centers = proj.getCenters();
-        // for (String center : centers){
-        //     System.out.println(center);
-        // }
+        //Test the getCenters method
+        String[] centers = proj.getCenters();
+        for (String center : centers){
+            System.out.println(center);
+        }
 
-        // String[] paths = proj.getHamiltonianPath();
-        // for (String path : paths){
-        //     System.out.println(path);
-        // }
+        //Test the getHamiltonianPath
+        //This method is tested using file example_graph2
+        String[] paths = proj.getHamiltonianPath();
+        for (String path : paths){
+            System.out.println(path);
+        }
     }
 }
