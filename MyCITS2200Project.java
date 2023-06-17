@@ -369,6 +369,7 @@
     * are in the array.
     * 
     * @return an array containing all the URLs that correspond to pages that are centers.
+    *
     */
    public String[] getCenters(){
      return findCenters().toArray(new String[0]);
@@ -396,6 +397,7 @@
            maxDistance = distance;
          }
        }
+
        eccentricities[i] = maxDistance; //eccentricity is the maximum length shortest path
      }
  
@@ -422,6 +424,7 @@
     */
    private int findMinimum(int[] arr){
      int minValue = arr[0];
+
      for (int value : arr){
        if (value < minValue){
          minValue = value;
@@ -430,4 +433,4 @@
  
      return minValue;
    }
- } 
+ }
