@@ -1,7 +1,6 @@
 package GraphRepresentation;
 
 import java.io.*;
-import java.util.*;
 
 public class CITS2200ProjectTester {
     public static void loadGraph(MyCITS2200Project project, String path) {
@@ -36,19 +35,19 @@ public class CITS2200ProjectTester {
         int shortestPath = proj.getShortestPath(startVertex, endVertex);
         System.out.println("Shortest path from " + startVertex + " to " + endVertex + " is: " + shortestPath);
 
-        String[][] stronglyConnectedComponents = proj.getStronglyConnectedComponents();
-        for (String[] component : stronglyConnectedComponents) {
-            System.out.println(Arrays.toString(component));
-        }
+        // String[][] stronglyConnectedComponents = proj.getStronglyConnectedComponents();
+        // for (String[] component : stronglyConnectedComponents) {
+        //     System.out.println(Arrays.toString(component));
+        // }
 
-        String[] centers = proj.getCenters();
-        for (String center : centers){
-            System.out.println(center);
-        }
+        // String[] centers = proj.getCenters();
+        // for (String center : centers){
+        //     System.out.println(center);
+        // }
 
-        String[] paths = proj.getHamiltonianPath();
-        for (String path : paths){
-            System.out.println(path);
-        }
+        // String[] paths = proj.getHamiltonianPath();
+        // for (String path : paths){
+        //     System.out.println(path);
+        // }
     }
 }
