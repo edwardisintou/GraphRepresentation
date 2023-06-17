@@ -1,10 +1,10 @@
 # CITS2200 Data Structures and Algorithms
 
 ## Project 1: Graph Representation
-Author 1: Edward Le\n
+Author 1: Edward Le
 Author 2: Ryan Alexander Hartono
 
-Due: Wednesday, May 24, 2023, 11:59pm\n
+Due: Wednesday, May 24, 2023, 11:59pm
 This project can be done in pairs or individual as prefer with report explaining clearly all method used and complexity in pdf format.
 
 This project is a multi-part project, which means that it comprises several questions. The topic of this project is to analyze parts of the Wikipedia graph by creating a class that can store and analyze various features of a Wikipedia page graph. This class should implement interface CITS22000Project. Wikipedia contains numerous pages on varied topics. These pages may link to other pages inside Wikipedia. If we treat pages as vertices, and links as directed edges, then Wikipedia can be viewed as a graph. We will not be dealing with the entire Wikipedia page graph, as it is too large. Instead, the class is expected to work with arbitrarily selected subsets of pages along with the links between these pages.
