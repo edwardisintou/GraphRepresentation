@@ -31,4 +31,4 @@ This project worths 20% of the final grade. The marking scheme is as follows:
 3. Correct implementations of algorithms will get 70% of the marks, design/use/explain efficient algorithms are marked as well.
 
 ## Clarifications and Explanations
-Detailed clarifications and explanations can be found in file "project_details".
+Detailed clarifications and explanations can be found in file "Explanations".
