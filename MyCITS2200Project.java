@@ -148,6 +148,7 @@
      }
  
      int[] distance = new int[numVertices]; //initialize all distances to -1, which means the vertex hasn't been visited yet
+     Arrays.fill(distance, -1); //initialize all distances to -1, which means the vertex hasn't been visited yet
      distance[startVertex] = 0; //startVertex has distance to itself of 0
  
      Queue<Integer> queue = new LinkedList<>();
@@ -164,6 +165,7 @@
            if (neighbor == endVertex){ //stop when reaching endVertex and get distance at that point
              return distance[neighbor];
            }
+
            queue.add(neighbor);
          }
        }
