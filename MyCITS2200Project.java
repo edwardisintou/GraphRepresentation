@@ -1,7 +1,7 @@
 /**
  * Project 1 2023 CITS2200: Graph Representation
  * This project represents the graph using adjacency list
- * each vertice represents the URL of Wikipedia page
+ * each vertex represents the URL of Wikipedia page
  * each vertex is indexed by its unique id
  * for a purpose of better indexing
  * 
@@ -36,6 +36,11 @@
     * idFromURL is a hashmap with key is an url and value is the index
     */
    private HashMap<String, Integer> idFromURL = new HashMap<>();
+
+   /*
+    * numVertices is the total number of vertices in the graph
+    */
+   private int numVertices = adjList.size();
  
    /**
     * check if URL(vertex) already exists
@@ -46,7 +51,7 @@
     * 
     */
    private boolean hasVertex(String url){
-     return idFromURL.containsKey(url);
+     return urlList.contains(url) && idFromURL.containsKey(url);
    }
  
    /**
@@ -101,6 +106,7 @@
      if (!hasEdge(idFrom, idTo)){
        adjList.get(idFrom).add(idTo); //creates a direct edge from the idFrom vertex to the idTo vertex.
        transposeAdjList.get(idTo).add(idFrom); // Adds the corresponding edge in the transpose graph.
+       numVertices = adjList.size(); //update number of vertices
      }
    }
  
@@ -141,8 +147,7 @@
        return 0;
      }
  
-     int[] distance = new int[adjList.size()];
-     Arrays.fill(distance, -1); //initialize all distances to -1, which means the vertex hasn't been visited yet
+     int[] distance = new int[numVertices]; //initialize all distances to -1, which means the vertex hasn't been visited yet
      distance[startVertex] = 0; //startVertex has distance to itself of 0
  
      Queue<Integer> queue = new LinkedList<>();
@@ -155,6 +160,7 @@
        for (int neighbor : adjList.get(tail)){
          if (distance[neighbor] == -1){ //if the neighbor hasn't been visited yet
            distance[neighbor] = distance[tail] + 1; //distance to every new vertex is increased by 1
+           
            if (neighbor == endVertex){ //stop when reaching endVertex and get distance at that point
              return distance[neighbor];
            }
@@ -186,8 +192,6 @@
     * 
     */
    public String[] getHamiltonianPath(){
-     int numVertices = adjList.size();
- 
      //return empty array if there are more than 20 vertices
      if (numVertices > 20){
        System.out.println("this algorithm is inappropriate for more than 20 vertices");
@@ -228,7 +232,7 @@
  
      //base case: return true when path contains all vertice
      //which means the path is found
-     if (path.size() == adjList.size()){
+     if (path.size() == numVertices){
        return true;
      }
  
@@ -276,11 +280,11 @@
      Stack<Integer> stack = new Stack<>();
      
      // Mark all the vertices as not visited (For first DFS)
-     boolean visited[] = new boolean[urlList.size()]; // urlList.size() = num of vertices
+     boolean visited[] = new boolean[numVertices]; //
      Arrays.fill(visited, false);
  
      // Fill vertices in stack according to their finishing time
-     for (int i = 0; i < urlList.size(); i++) {
+     for (int i = 0; i < numVertices; i++) {
        if (!visited[i]) {
          depthFirstSearch(i, visited, stack, adjList);
        }
@@ -307,7 +311,7 @@
      
      // Convert the strongly connected components to string arrays
      String[][] components = new String[result.size()][];
-     for (int i = 0; i < result.size(); i++) {
+     for (int i = 0; i < components.length; i++) {
        Stack<Integer> component = result.get(i);
        components[i] = new String[component.size()];
  
@@ -376,7 +380,6 @@
     * 
     */
    private ArrayList<String> findCenters() {
-     int numVertices = adjList.size();
      int[] eccentricities = new int[numVertices]; //array to store eccentricity of each vertex
  
      //find the eccentricity of each vertex
@@ -417,14 +420,14 @@
     * @return that mininum value
     * 
     */
-   private int findMinimum(int[] list){
-     int min = list[0];
-     for (int num : list){
-       if (num < min){
-         min = num;
+   private int findMinimum(int[] arr){
+     int minValue = arr[0];
+     for (int num : arr){
+       if (num < minValue){
+         minValue = num;
        }
      }
  
-     return min;
+     return minValue;
    }
  } 
