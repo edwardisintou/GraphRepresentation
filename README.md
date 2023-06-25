@@ -1,6 +1,8 @@
 # CITS2200 Data Structures and Algorithms
 
 ## Project 1: Graph Representation
+
+### 16/20 HD
 Author 1: Edward Le\
 Author 2: Ryan Alexander Hartono
 
